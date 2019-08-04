@@ -86,6 +86,7 @@ module.exports = function (options) {
     if(files.length == 0) return callback();
 
     files = files.map(function(file) {
+      file = file.sub(/~/g, '%7e');
       return '/' + file;
     });
 
