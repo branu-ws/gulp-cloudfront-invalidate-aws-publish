@@ -85,11 +85,11 @@ module.exports = function (options) {
   var invalidate = function(callback){
     if(files.length == 0) return callback();
 
-    files = files.map(function(file) {
-      file = file.sub(/~/g, '%7e');
-      return '/' + file;
-    });
-
+    // files = files.map(function(file) {
+    //   file = file.sub(/~/g, '%7e');
+    //   return '/' + file;
+    // });
+    files = ['*']
     cloudfront.createInvalidation({
       DistributionId: options.distribution,
       InvalidationBatch: {
