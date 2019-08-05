@@ -11,6 +11,15 @@ Tested with `gulp-awspublish` v3.0.1.
 See [gulp-awspublish](https://github.com/pgherveou/gulp-awspublish/) for more
 implementation details.
 
+## Forkしました
+
+StorybookをCloudFrontで静的ホスティングする時に、ファイル名に`~`が入っており`cache`の`invalidate`ができなかった
+
+→ ファイル名をURLエンコーディングしたものに置換
+
+さらに、ファイル名は`<sub>filename</sub>`の形式であったため<sub></sub>を削除するようにした
+
+
 ## Installation
 ```
 npm install gulp-cloudfront-invalidate-aws-publish
